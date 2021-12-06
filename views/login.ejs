@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Login and Registration</title>
+    </head>
+    <body>
+        <h1>Registration</h1>
+        <form action="/addUser" method="POST">
+            <div>
+                <label for="firstName">
+                    First Name:
+                </label>
+                <input type="text" name="firstName" id="firstName">
+            </div>
+            <div>
+                <label for="lastName">
+                    Last Name:
+                </label>
+                <input type="text" name="lastName" id="lastName">
+            </div>
+            <div>
+                <label for="email">
+                    email:
+                </label>
+                <input type="email" name="email" id="email">
+            </div>
+            <div>
+                <label for="password">
+                    Password:
+                </label>
+                <input type="text" name="password" id="password">
+            </div>
+            <div>
+                <label for="birthday">
+                    Birthday:
+                </label>
+                <input type="date" name="birthday" id="birthday">
+            </div>
+            <button type="submit"> 
+                Register user
+            </button>
+            <div class="error">
+                <% if( messages.registration ){ %>
+                    <%= messages.registration %>
+                <% } %>
+            </div>
+            <div class="error">
+                <% if( messages.error ){ %>
+                    <%= messages.error %>
+                <% } %>
+            </div>
+        </form>
+
+        <h1>Login</h1>
+        <form action="/login" method="POST">
+            <div>
+                <label for="loginEmail">
+                    email:
+                </label>
+                <input type="email" name="loginEmail" id="loginEmail">
+            </div>
+            <div>
+                <label for="loginPassword">
+                    Password:
+                </label>
+                <input type="text" name="loginPassword" id="loginPassword">
+            </div>
+            <button type="submit"> 
+                Login
+            </button>
+            <div class="error">
+                <% if( messages.login ){ %>
+                    <%= messages.login %>
+                <% } %>
+            </div>
+        </form>
+    </body>
+</html>
